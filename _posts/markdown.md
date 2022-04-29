@@ -4,9 +4,8 @@
 목차
 1. Network Flow\
   -용어 정리
-3. Ford-Fulkerson algorithm
-4. 알고리즘의 구현
-5. 코드
+2. Ford-Fulkerson algorithm
+3. 코드
 ---
 
 
@@ -42,6 +41,16 @@ Network Flow
 바로 포드-폴커슨 알고리즘(Ford-Fulkerson algorithm)과 디닉 알고리즘(Dinic's Algorithm), 에드몬트 카프(Edmonds-Karp)알고리즘 등이 있다.  
 이 중에 포드 폴커슨 알고리즘에 대해 자세히 알아보도록 하겠다. 
 
-이 알고리즘의 동작 원리는 다음과 같다.
+포드 폴커슨 알고리즘을 자세히 알아보기 전에 먼저 네트워크 플로우의 진행 방식에 대해 간단히 알아보자면, 
 
 ![](https://mblogthumb-phinf.pstatic.net/MjAxODA2MTNfMzgg/MDAxNTI4ODc3MTMyODg0.2gf1YpY4Ygu7renBP-l06LGPk07myMGp327x4dAWUgAg.H7mljrE_4CccWYcSLnb6zuaS0O5MLUGUVk65AI_bgIIg.PNG.jh20s/image.png?type=w800)
+
+이 그래프에서 각 간선은 유량/용량을 나타내고 S->T로 진행된다. 
+
+![](https://mblogthumb-phinf.pstatic.net/MjAxODA2MTNfODEg/MDAxNTI4ODc3MTI4OTA4.8Vf0f1b-dokYXvwMS5K0OXhRVOYM0oCFp8PsZ_smG9sg.kykjnwANZGSCxzRC5WLYt_eDtPSf5t0Eakkv5iNkgxIg.PNG.jh20s/image.png?type=w800)
+위로 2를 흘려 보내고
+
+![](https://mblogthumb-phinf.pstatic.net/MjAxODA2MTNfMjE3/MDAxNTI4ODc3MTIyNjgy.KYNE-KkUKkOz-z0YOGBLze3x2fd6MyW8Xnr1QEmxdO4g.a9SkxjJ4NUYM04tl1UoMj5N4ED2vM16I2aPMvRQrCYMg.PNG.jh20s/image.png?type=w800)
+아래로 2를 흘려 보냈다면, 전체적으로 S에서 T로 4를 흘려보내 준 것이고 위 그래프에서는 최대 4만큼의 유량을 흘려보내 줄 수 있다고 한다. 
+
+이제 포트 풀커슨 알고리즘의 작동 방식에 대해 자세히 알아보자.
